@@ -1,1 +1,1 @@
-Creating a streamlit app that can take in any url link and answer questions based on the links provided using OpenAI API and LangChains
+Creating a streamlit app that can take in any url link and answer questions based on the links provided using OpenAI API and LangChain
