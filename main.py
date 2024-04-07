@@ -12,9 +12,11 @@ from langchain.vectorstores import FAISS
 from dotenv import load_dotenv
 load_dotenv()  # take environment variables from .env (especially openai api key)
 
+# create streamlit app with the below main title and sidebar title
 st.title("RockyBot: News Research Tool 📈")
 st.sidebar.title("News Article URLs")
 
+# create space to append urls 
 urls = []
 for i in range(3):
     url = st.sidebar.text_input(f"URL {i+1}")
@@ -26,6 +28,7 @@ file_path = "faiss_store_openai.pkl"
 main_placeholder = st.empty()
 llm = OpenAI(temperature=0.9, max_tokens=500)
 
+# when the process url button is clicked, laods unstructured data from the url given, splits the data into chunks and then embeds in faiss database 
 if process_url_clicked:
     # load data
     loader = UnstructuredURLLoader(urls=urls)
